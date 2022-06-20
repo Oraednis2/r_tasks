@@ -1,44 +1,21 @@
+import { Anchor, Box, Heading, Nav, Text } from 'grommet'
 import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { Home, Menu } from 'grommet-icons'
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [open, setOpen] = useState(false)
+
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <Box>
+      <Nav direction='row' background='brand' pad="xsmall">
+        <Anchor onClick={() => setOpen(true)} icon={<Menu />}></Anchor>
+        <Text alignSelf='center' size='large' >Remote Tasks</Text>
+      </Nav>
+      <Heading level={3}>Hello</Heading>
+    </Box>
   )
 }
 
